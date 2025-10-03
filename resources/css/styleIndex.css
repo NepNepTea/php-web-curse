@@ -1,0 +1,182 @@
+@import "for_all.css";
+body{
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.saleButton:hover {
+    background-color: var(--border);
+}
+.sureButton:hover {
+    background-color: var(--border);
+}
+@media screen and (min-width: 480px){
+    .main1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 80px;
+    }
+    .saleButton {
+        width: 15vw;
+        height: 15vw;
+        border: 2px solid var(--text);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 20px;
+        box-shadow: var(--text) 0 3px 8px;
+        font-weight: 700;
+    }
+    .sureBlock {
+        font-size: 32px;
+        background-image: url("../images/fishes.svg");
+        width: 736px;
+        height: 420px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 64px;
+    }
+    .sureWords {
+        padding-right: 134px;
+        font-weight: 700;
+    }
+    .sureButton {
+        margin-left: 214px;
+        width: 228px;
+        height: 61px;
+        border: 2px solid var(--text);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: var(--text) 0 3px 8px;
+    }
+    .main2 {
+        margin-top: 116px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        font-size: 32px;
+    }
+    .brands {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        width: 60vw;
+        height: 434px;
+        border: 2px solid var(--border);
+        border-radius: 10px;
+    }
+    .brandLine {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 140px;
+    }
+    .ofish{
+        display: none;
+    }
+    .wfish{
+        display: none;
+    }
+}
+@media screen and (max-width: 480px) {
+    .main1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+    .saleButton {
+        width: 50vw;
+        border: 1px solid var(--text);
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 16px;
+        box-shadow: var(--text) 0 2px 6px;
+        font-weight: 700;
+        padding: 8px;
+    }
+    .saleIcon{
+        width: 80px;
+    }
+    .sureBlock {
+        width: 90vw;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        background-color: var(--backColor);
+        padding: 8px;
+        border-radius: 10px;
+    }
+    .sureWords {
+        font-weight: 700;
+    }
+    .sureButton {
+        border: 1px solid var(--text);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: var(--text) 0 2px 6px;
+        padding: 4px;
+    }
+    .main2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        font-size: 16;
+    }
+    .brands {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        width: 70vw;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .brandLine {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .singleBrand{
+        width: 166px;
+        height: 86px;
+    }
+    .ofish{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        right: 26px;
+    }
+    .wfish{
+        position: absolute;
+        width: 140px;
+        height: 140px;
+        left: 26px;
+    }
+}

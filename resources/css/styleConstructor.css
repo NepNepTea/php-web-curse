@@ -1,0 +1,224 @@
+@import "for_all.css";
+body{
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+@media screen and (min-width: 480px){
+    .constructor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .components {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        margin-top: 42px;
+        margin-bottom: 116px;
+        gap: 20px;
+    }
+    .singleComponent {
+        border: 2px solid var(--text);
+        border-radius: 10px;
+        width: 280px;
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .componentName {
+        background-color: var(--backColor);
+        font-size: 20px;
+        width: 82%;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .change {
+        color: var(--border);
+    }
+    .priceBlock {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .price {
+        border-bottom: 2px solid var(--accent);
+    }
+    .info {
+        width: 82%;
+        font-size: 16px;
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 56px;
+    }
+    .addButton {
+        border-bottom: 2px solid var(--accent);
+        font-weight: 700;
+        font-size: 20px;
+        padding-bottom: 26px;
+    }
+    .constHeader {
+        width: 60vw;
+        border-bottom: 2px solid var(--border);
+        padding-bottom: 20px;
+        padding-left: 62px;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 32px;
+    }
+    .product {
+        width: 100px;
+    }
+    .costBlock{
+        font-size: 32px;
+    }
+    .finalCost {
+        width: 336px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .finalNumbers {
+        width: 190px;
+        border-bottom: 2px solid var(--accent);
+    }
+    .warnings{
+        padding: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #CF2727;
+        background-color: #FFF8C5;
+        font-size: 20px;
+        gap: 60px;
+    }
+    .oneError{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .constructor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .components {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        gap: 10px;
+        margin-bottom: 30px;
+    }   
+    .singleComponent {
+        border: 1px solid var(--text);
+        border-radius: 10px;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        color: var(--text);
+    }   
+    .componentName {
+        background-color: var(--backColor);
+        font-size: 14px;
+        width: 82%;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .icon{
+        width: 20vw;
+        height: 20vw;
+    }
+    .productName {
+        background-color: var(--backColor);
+        font-size: 14px;
+        width: 82%;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .priceBlock {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }   
+    .price {
+        border-bottom: 1px solid var(--accent);
+    }
+    .change {
+        color: var(--border);
+    }
+    .info {
+        width: 82%;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--text);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }    
+    .addButton {
+        border-bottom: 1px solid var(--accent);
+        font-weight: 700;
+        font-size: 16px;
+        padding-bottom: 10px;
+    }   
+    .constHeader {
+        width: 70vw;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 20px;
+        padding-left: 62px;
+        font-size: 16px;
+    }    
+    .product {
+        width: 20vw;
+    }   
+    .costBlock {
+        width: 200px;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border: 1px solid var(--text);
+        border-radius: 10px;
+    }
+    .finalCost {
+        display: flex;
+        gap: 10px;
+    } 
+    .finalNumbers {
+        border-bottom: 1px solid var(--accent);
+    }
+    .warnings{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #CF2727;
+        background-color: #FFF8C5;
+        font-size: 12px;
+        padding: 4px;
+        gap: 10px;
+    }
+    .oneError{
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .errorIcon{
+        width: 16px;
+        height: 16px;
+    }
+}

@@ -1,0 +1,62 @@
+@import "for_all.css";
+body{
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn:hover {
+    background-color: var(--border);
+}
+@media screen and (min-width: 480px){
+    .confirm{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 20px;
+        border: 2px solid var(--text);
+        border-radius: 10px;
+        padding: 40px;
+    }
+    .btn {
+        padding: 10px;
+        border: 2px solid var(--text);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: var(--text) 0 3px 8px;
+    }
+    .buttons{
+        display: flex;
+        gap: 20px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .confirm{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 16px;
+        border: 1px solid var(--text);
+        border-radius: 10px;
+        padding: 20px;
+    }
+    .btn {
+        padding: 10px;
+        border: 1px solid var(--text);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: var(--text) 0 3px 8px;
+    }
+    .buttons{
+        display: flex;
+        gap: 20px;
+    }
+}

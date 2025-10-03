@@ -1,0 +1,71 @@
+@import "for_all.css";
+body{
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+@media screen and (min-width: 480px){
+    .salesBlock {
+        margin-top: 248px;
+        font-size: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 116px;
+    }
+    .saleHeader {
+        width: 1570px;
+        border-bottom: 2px solid var(--border);
+        padding-bottom: 20px;
+        padding-left: 62px;
+    }
+    .oneSale {
+        width: 1080px;
+        height: 630px;
+    }
+    .wait {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 175px;
+        background-color: var(--backColor);
+        width: 1080px;
+        border-radius: 90px;
+        height: 180px;
+        margin-bottom: 116px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .salesBlock {
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .saleHeader {
+        width: 70vw;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 20px;
+        padding-left: 40px;
+        font-size: 16px;
+    }
+    .oneSale {
+        width: 70vw;
+    }
+    .wait {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--backColor);
+        width: 70vw;
+        border-radius: 30px;
+        padding: 8px;
+    }
+    .hourGlass{
+        width: 40px;
+        height: 40px;
+    }
+}

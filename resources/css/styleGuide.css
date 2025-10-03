@@ -1,0 +1,80 @@
+@import "for_all.css";
+body{
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+@media screen and (min-width: 480px){
+    main {
+        font-size: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 29px;
+        padding-bottom: 116px;
+    }
+    .steps {
+        padding-top: 76px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 87px;
+    }
+    .oneStep {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 60vw;
+        filter: contrast(20%);
+    }
+    .oneStep:hover {
+        filter: none;
+        box-shadow: 0 -5px 5px -5px var(--text) inset;
+    }
+    .text {
+        width: 515px;
+        font-size: 16px;
+    }
+    .number{
+        font-size: 96px;
+        font-family: "Syncopate", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+}
+@media screen and (max-width: 480px) {
+    main {
+        font-weight: 600;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    main > h1 {
+        font-size: 24px;
+    }
+    .steps {
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .oneStep {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 16px;
+    }
+    .text {
+        font-size: 14px;
+    }
+    .iconGuide{
+        width: 20vw;
+        height: 20vw;
+    }
+    .number{
+        display: none;
+    }
+}
