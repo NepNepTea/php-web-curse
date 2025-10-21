@@ -24,30 +24,30 @@
                 <div>RIVER<br>PLANET</div>
             </a>
             <nav class="navigation">
-                <div class="pageL"><a href="constructor.html">КОНСТРУКТОР АКВАРИУМОВ</a></div>
+                <div class="pageL"><a href="{{ route('constructor') }}">КОНСТРУКТОР АКВАРИУМОВ</a></div>
                 <div class="pageR"><a href="techPage.html">КАТАЛОГ ОБОРУДОВАНИЯ</a></div>
             </nav>
             <a href="cart.html"><img src="images/cart.svg" alt="" class="cartMobile"></a>
             <div class="dropdown">
                 <button class="dropbtn">МЕНЮ</button>
                 <div class="dropdown-content">
-                  <a href="constructor.html">конструктор аквариумов</a>
+                  <a href="{{ route('constructor') }}">конструктор аквариумов</a>
                   <a href="techPage.html">каталог оборудования</a>
-                  <a href="">профиль</a>
+                  <a href="{{ route('profile') }}">профиль</a>
                   <a href="logout.html">выйти</a>
                 </div>
               </div>
         </div>
         <div class="user">
             <img src="images/profile.svg" alt="">
-            <a href="profilePage.html">имяПользователя</a>
+            <a href="{{ route('profile') }}">имяПользователя</a>
             <a href="cart.html"><img src="images/cart.svg" alt="" class="cart"></a>
             <a href="logout.html">выйти</a>
         </div>
     </header>
 <main>
     <section class="main1">
-        <a href="salesPage.html" class="saleButton">
+        <a href="{{ route('sales') }}" class="saleButton">
             <div><img src="images/sale.svg" alt="" class="saleIcon"></div>
             <p>АКЦИИ</p>
         </a>
@@ -55,7 +55,7 @@
             <p class="sureWords">содержать рыбку<br>проще чем котёнка</p>
             <img src="images/oFish.svg" alt="" class="ofish">
             <img src="images/wFish.svg" alt="" class="wfish">
-            <a href="guidePage.html" class="sureButton">
+            <a href="{{ route('guide') }}" class="sureButton">
                 <p>УБЕДИТЬСЯ</p>
             </a>
         </div>
