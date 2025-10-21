@@ -49,3 +49,7 @@ Route::get('/logout', function () {
 Route::get('/signup', function () {
     return view('signup');
 })->name('signup');
+
+Route::get('/catalog', function () {
+    return view('catalog');
+})->name('catalog');
