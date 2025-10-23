@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\Register;
+use App\Http\Controllers\Auth\Login;
+use App\Http\Controllers\Auth\Logout;
+use App\Http\Controllers\CatalogController;
 
 Route::get('/', function () {
     return view('index');
@@ -38,18 +42,27 @@ Route::get('/delete-profile', function () {
     return view('delete-profile');
 })->name('delete-profile');
 
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
+Route::view('/register', 'auth.register')
 
-Route::get('/logout', function () {
-    return view('logout');
-})->name('logout');
+    ->middleware('guest')
 
-Route::get('/signup', function () {
-    return view('signup');
-})->name('signup');
+    ->name('register');
 
-Route::get('/catalog', function () {
-    return view('catalog');
-})->name('catalog');
+Route::post('/register', Register::class)
+
+    ->middleware('guest');
+
+// Login routes
+Route::view('/login', 'auth.login')
+    ->middleware('guest')
+    ->name('login');
+
+Route::post('/login', Login::class)
+    ->middleware('guest');
+
+// Logout route
+Route::post('/logout', Logout::class)
+    ->middleware('auth')
+    ->name('logout');
+
+Route::get('/catalog', [CatalogController::class, 'index'])->name('catalog');
