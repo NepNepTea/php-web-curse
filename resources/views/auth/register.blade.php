@@ -7,7 +7,7 @@
 @section('content')
   <link rel="stylesheet" href="css/styleLogin.css">
 
-  <form method="POST" action="/register">
+  <form method="POST" action="{{route('register')}}">
       @csrf
       <h1>Регистрация</h1>
       <label for="name">Имя:</label>

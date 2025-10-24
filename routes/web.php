@@ -52,7 +52,9 @@ Route::view('/register', 'auth.register')
 
 Route::post('/register', Register::class)
 
-    ->middleware('guest');
+    ->middleware('guest')
+
+    ->name('register');
 
 // Login routes
 Route::view('/login', 'auth.login')
