@@ -2,22 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use Illuminate\Http\Request;
-use App\Models\Product;
 use App\Models\Brand;
+use Illuminate\Http\Request;
 
-class CatalogController extends Controller
+class BrandController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('catalog', [
-                    'products' => Product::all(),
-                    'brands' => Brand::all()
-                ]);
+        //
     }
 
     /**
@@ -27,17 +22,7 @@ class CatalogController extends Controller
     {
         $validated = $request->validate([
 
-            'full-name' => 'required',
-
-            'shortName' => 'required',
-
-            'price' => 'required',
-
-            'type' => 'required',
-
-            'brand' => 'required',
-            'status' => 'required',
-            'photo' => 'required',
+            'name' => 'required',
 
         ]);
 
@@ -45,25 +30,19 @@ class CatalogController extends Controller
 
         // Create the user
 
-        $product = Product::create([
+        $brand = Brand::create([
 
-            'full-name' => $validated['full-name'],
-
-            'shortName' => $validated['short-name'],
-            'price' => $validated['price'],
-            'type' => $validated['type'],
-            'brand' => $validated['brand'],
-            'status' => $validated['status'],
+            'name' => $validated['name'],
 
         ]);
-        $file = $request->file('photo');
+        $file = $request->file('logo');
         $extension = $file->getClientOriginalExtension();
 
-        $filename = $request->shortName.'.'.$extension;
+        $filename = $request->name.'.'.$extension;
 
-        $path = 'images/products/';
+        $path = 'images/brands/';
         $file->move($path, $filename);
-        return redirect('/catalog-add')->with('success', 'Товар добавлен');
+        return redirect('/brand-add')->with('success', 'Бренд добавлен');
     }
 
     /**

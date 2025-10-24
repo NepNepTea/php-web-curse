@@ -38,7 +38,7 @@
 
             @foreach ($products as $product)
 
-                @if ($product->type == "фильтр")
+                @if ($product->type == "filter")
                             <div class="card">
                                 <div><img src="images/products/{{ $product->short_name }}.png" alt="" class="product"></div>
                                 <div class="secondBlock">
@@ -72,7 +72,7 @@
             <h1 class="catalogHeader">ОСВЕЩЕНИЕ</h1>
             @foreach ($products as $product)
 
-                            @if ($product->type == "освещение")
+                            @if ($product->type == "light")
                                         <div class="card">
                                             <div><img src="images/products/{{ $product->short_name }}.png" alt="" class="product"></div>
                                             <div class="secondBlock">
@@ -101,30 +101,6 @@
                             @endif
 
                         @endforeach
-            <div class="card">
-                <div><img src="images/lamp.png" alt="" class="product"></div>
-                <div class="secondBlock">
-                    <h2 class="cardName">Светильник светодиодный 30LD1</h2>
-                    <div class="information">
-                        <p>Размеры: 85*17*240мм</p>
-                        <p>Материал/состав: металл</p>
-                        <p>Мощность: 10Вт</p>
-                        <p>Количество светодиодов: 24 белых/12 красных</p>
-                    </div>
-                </div>
-                <div class="thirdBlock">
-                    <div><img src="images/lagoon.svg" alt="" class="brand"></div>
-                    <div class="price">3 050 Руб</div>
-                    <div class="add">
-                        <a href="{{ route('constructor') }}">Добавить в конструктор</a>
-                        <div><img src="images/check.svg" alt="" class="filterIcon"></div>
-                    </div>
-                    <div class="add">
-                        <a href="{{ route('cart') }}">Добавить в корзину</a>
-                        <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 @endsection
