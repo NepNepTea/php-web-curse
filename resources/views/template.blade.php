@@ -24,14 +24,14 @@
             </a>
             <nav class="navigation">
                 <div class="pageL"><a href="{{ route('constructor') }}">КОНСТРУКТОР АКВАРИУМОВ</a></div>
-                <div class="pageR"><a href="{{ route('catalog') }}">КАТАЛОГ ОБОРУДОВАНИЯ</a></div>
+                <div class="pageR"><a href="{{ route('catalog') }}">КАТАЛОГ</a></div>
             </nav>
             <a href="cart.html"><img src="images/cart.svg" alt="" class="cartMobile"></a>
             <div class="dropdown">
                 <button class="dropbtn">МЕНЮ</button>
                 <div class="dropdown-content">
                   <a href="{{ route('constructor') }}">конструктор аквариумов</a>
-                  <a href="{{ route('catalog') }}">каталог оборудования</a>
+                  <a href="{{ route('catalog') }}">каталог</a>
                   <a href="{{ route('profile') }}">профиль</a>
                   <a href="{{ route('logout-page') }}">выйти</a>
                 </div>

@@ -31,6 +31,7 @@
             <option value="wood">Дерево</option>
             <option value="stones">Камни</option>
             <option value="Hideout">Укрытие</option>
+            <option value="soil">Грунт</option>
         </select>
 
         <label for="brand-select">Бренд:</label>
