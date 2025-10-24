@@ -42,7 +42,7 @@
                 <img src="images/profile.svg" alt="">
                 <a href="{{ route('profile') }}">{{ auth()->user()->name }}</a>
                 <a href="{{ route('cart') }}"><img src="images/cart.svg" alt="" class="cart"></a>
-                <form method="POST" action="/logout">
+                <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit" class="logoutBtn">Выйти</button>
                 </form>

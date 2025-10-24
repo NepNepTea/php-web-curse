@@ -60,7 +60,7 @@ class Register extends Controller
 
         // Redirect to home
 
-        return redirect('/')->with('success', 'Welcome to Chirper!');
+        return redirect('/')->with('success', 'Добро пожаловать в River Planet');
 
     }
 

@@ -7,7 +7,8 @@
 @section('content')
   <link rel="stylesheet" href="css/styleLogin.css">
 
-  <form method="POST" action="/login">
+  <form method="POST" action="{{route('login')}}">
+      @csrf
     <h1>Авторизация</h1>
     <label for="email">Почта:</label>
     <input type="email" id="email" name="email" class="inputLine" required>
