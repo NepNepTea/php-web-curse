@@ -7,11 +7,11 @@
 @section('content')
     <link rel="stylesheet" href="css/styleLogin.css">
 
-    <form method="POST" action="/catalog-add">
+    <form method="POST" action="{{route('catalog-add')}}">
         @csrf
         <h1>Добавить товар</h1>
-        <label for="full-name">Название:</label>
-        <input type="text" id="full-name" name="full-name" class="inputLine" required>
+        <label for="full_name">Название:</label>
+        <input type="text" id="full_name" name="full_name" class="inputLine" required>
 
         <label for="shortName">Короткое название (для фото):</label>
         <input type="text" id="shortName" name="shortName" class="inputLine" required>

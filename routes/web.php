@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\Logout;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\BrandController;
 use App\Models\Brand;
+use App\Http\Middleware\IsAdmin;
 
 Route::get('/', function () {
     return view('index');
@@ -78,12 +79,17 @@ Route::get('/catalog', [CatalogController::class, 'index'])->name('catalog');
 
 Route::view('/catalog-add', 'catalog-add', ['brands' => Brand::all()])
 
-    ->name('catalog-add');
+    ->name('catalog-add')
+    ->middleware(IsAdmin::class)
+    ->middleware('auth');
 
-Route::post('/catalog-add', [CatalogController::class, 'create']);
+Route::post('/catalog-add', [CatalogController::class, 'create'])->name('catalog-add')
+    ->name('catalog-add')
+    ->middleware(IsAdmin::class)
+    ->middleware('auth');
 
 Route::view('/brand-add', 'brand-add')
-
+    ->middleware(IsAdmin::class)
     ->name('brand-add');
 
 Route::post('/brand-add', [BrandController::class, 'create']);

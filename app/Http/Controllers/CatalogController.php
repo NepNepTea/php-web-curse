@@ -27,7 +27,7 @@ class CatalogController extends Controller
     {
         $validated = $request->validate([
 
-            'full-name' => 'required',
+            'full_name' => 'required',
 
             'shortName' => 'required',
 
@@ -47,9 +47,9 @@ class CatalogController extends Controller
 
         $product = Product::create([
 
-            'full-name' => $validated['full-name'],
+            'full_name' => $validated['full_name'],
 
-            'shortName' => $validated['short-name'],
+            'shortName' => $validated['shortName'],
             'price' => $validated['price'],
             'type' => $validated['type'],
             'brand' => $validated['brand'],
