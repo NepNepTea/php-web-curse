@@ -37,7 +37,8 @@ class CatalogController extends Controller
 
             'brand' => 'required',
             'status' => 'required',
-            'photo' => 'required',
+            'photo' => 'required|mimes:png',
+            'max_value' => 'required',
 
         ]);
 
@@ -54,6 +55,7 @@ class CatalogController extends Controller
             'type' => $validated['type'],
             'brand' => $validated['brand'],
             'status' => $validated['status'],
+            'max_value' => $validated['max_value'],
 
         ]);
         $file = $request->file('photo');
