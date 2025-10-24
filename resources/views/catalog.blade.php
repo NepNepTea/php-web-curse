@@ -40,7 +40,7 @@
 
                 @if ($product->type == "filter")
                             <div class="card">
-                                <div><img src="images/products/{{ $product->short_name }}.png" alt="" class="product"></div>
+                                <div><img src="images/products/{{ $product->short_name }}.png" alt="{{ $product->short_name }}" class="product"></div>
                                 <div class="secondBlock">
                                     <h2 class="cardName">{{ $product->full_name }}</h2>
                                     <div class="information">
@@ -74,7 +74,7 @@
 
                             @if ($product->type == "light")
                                         <div class="card">
-                                            <div><img src="images/products/{{ $product->short_name }}.png" alt="" class="product"></div>
+                                            <div><img src="images/products/{{ $product->short_name }}.png" alt="{{ $product->short_name }}" class="product"></div>
                                             <div class="secondBlock">
                                                 <h2 class="cardName">{{ $product->full_name }}</h2>
                                                 <div class="information">

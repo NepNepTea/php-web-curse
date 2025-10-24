@@ -66,6 +66,9 @@ Route::post('/login', Login::class)
     ->name('login');
 
 // Logout route
+Route::view('/logout-page', 'logout')
+    ->name('logout-page');
+
 Route::post('/logout', Logout::class)
     ->middleware('auth')
     ->name('logout');

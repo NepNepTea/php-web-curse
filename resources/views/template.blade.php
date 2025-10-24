@@ -33,7 +33,7 @@
                   <a href="{{ route('constructor') }}">конструктор аквариумов</a>
                   <a href="{{ route('catalog') }}">каталог оборудования</a>
                   <a href="{{ route('profile') }}">профиль</a>
-                  <a href="{{ route('logout') }}">выйти</a>
+                  <a href="{{ route('logout-page') }}">выйти</a>
                 </div>
               </div>
         </div>
@@ -42,10 +42,7 @@
                 <img src="images/profile.svg" alt="">
                 <a href="{{ route('profile') }}">{{ auth()->user()->name }}</a>
                 <a href="{{ route('cart') }}"><img src="images/cart.svg" alt="" class="cart"></a>
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button type="submit" class="logoutBtn">Выйти</button>
-                </form>
+                <a href="{{ route('logout-page') }}">выйти</a>
             @else
                 <a href="{{ route('login') }}">войти</a>
                 <a href="{{ route('register') }}">регистрация</a>

@@ -9,9 +9,12 @@
 
     <div class="confirm">
         <p>Вы уверены что хотите выйти?</p>
-        <div class="buttons">
-            <a href="index.html" class="btn">Вернуться на главную</a>
-            <a href="" class="btn">Выйти</a>
-        </div>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <div class="buttons">
+                <a href="{{ route('index') }}" class="btn">Вернуться на главную</a>
+                <button type="submit" class="btn">Выйти</button>
+            </div>
+        </form>
     </div>
 @endsection
