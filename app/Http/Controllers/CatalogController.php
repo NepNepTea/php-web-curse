@@ -37,7 +37,7 @@ class CatalogController extends Controller
 
             'brand' => 'required',
             'status' => 'required',
-            'photo' => 'required|mimes:png',
+            'photo' => 'required|file|size:2000|mimes:png',
             'max_value' => 'required',
 
         ]);

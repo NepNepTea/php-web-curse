@@ -30,11 +30,11 @@ class Register extends Controller
 
         $validated = $request->validate([
 
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:30|regex:^[а-яА-яЁё\s]',
 
             'email' => 'required|string|email|max:255|unique:users',
 
-            'password' => 'required|string|confirmed|min:8',
+            'password' => 'required|string|confirmed|min:8|regex:^[а-zA-Z0-9_]',
 
         ]);
 
