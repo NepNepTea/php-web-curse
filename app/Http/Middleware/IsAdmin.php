@@ -18,7 +18,7 @@ class IsAdmin
     public function handle(Request $request, Closure $next): Response
     {
         $id = Auth::id();
-        $usernow = User::where('role', 'admin')->first();
+        $usernow = User::where('id', $id)->first();
 
         if ($usernow->role !== 'admin') {
             return redirect('/');
