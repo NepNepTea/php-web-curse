@@ -46,6 +46,11 @@
                                     <h2 class="cardName">{{ $product->full_name }}</h2>
                                     <div class="information">
                                         <p>Максимальный объем аквариума: {{ $product->max_value }} Л.</p>
+                                        @if ($product->status > 0)
+                                            <p>В наличие: {{ $product->status }} Шт.</p>
+                                        @else
+                                            <p>Нет в наличие</p>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="thirdBlock">
@@ -60,8 +65,10 @@
                                         <div><img src="images/check.svg" alt="" class="filterIcon"></div>
                                     </div>
                                     <div class="add">
-                                        <a href="{{ route('cart') }}">Добавить в корзину</a>
-                                        <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
+                                        @if ($product->status > 0)
+                                            <a href="{{ route('cart') }}">Добавить в корзину</a>
+                                            <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -73,47 +80,18 @@
             <h1 class="catalogHeader">ОСВЕЩЕНИЕ</h1>
             @foreach ($products as $product)
 
-                            @if ($product->type == "light")
-                                        <div class="card">
-                                            <div><img src="images/products/{{ $product->shortName }}.png" alt="{{ $product->shortName }}" width="200" class="product"></div>
-                                            <div class="secondBlock">
-                                                <h2 class="cardName">{{ $product->full_name }}</h2>
-                                                <div class="information">
-                                                    <p>Максимальный объем аквариума: {{ $product->max_value }} Л.</p>
-                                                </div>
-                                            </div>
-                                            <div class="thirdBlock">
-                                                @foreach ($brands as $brand)
-                                                    @if ($brand->id == $product->brand)
-                                                        <div><img src="images/brands/{{ $brand->name }}.svg" alt="" class="brand"></div>
-                                                    @endif
-                                                @endforeach
-                                                <div class="price">{{ $product->price }} Руб</div>
-                                                <div class="add">
-                                                    <a href="{{ route('constructor') }}">Добавить в конструктор</a>
-                                                    <div><img src="images/check.svg" alt="" class="filterIcon"></div>
-                                                </div>
-                                                <div class="add">
-                                                    <a href="{{ route('cart') }}">Добавить в корзину</a>
-                                                    <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                            @endif
-
-                        @endforeach
-        </div>
-        <div class="category">
-            <h1 class="catalogHeader">АКВАРИУМЫ</h1>
-            @foreach ($products as $product)
-
-                @if ($product->type == "fish-tank")
+                @if ($product->type == "light")
                     <div class="card">
                         <div><img src="images/products/{{ $product->shortName }}.png" alt="{{ $product->shortName }}" width="200" class="product"></div>
                         <div class="secondBlock">
                             <h2 class="cardName">{{ $product->full_name }}</h2>
                             <div class="information">
                                 <p>Максимальный объем аквариума: {{ $product->max_value }} Л.</p>
+                                @if ($product->status > 0)
+                                    <p>В наличие: {{ $product->status }} Шт.</p>
+                                @else
+                                    <p>Нет в наличие</p>
+                                @endif
                             </div>
                         </div>
                         <div class="thirdBlock">
@@ -128,8 +106,51 @@
                                 <div><img src="images/check.svg" alt="" class="filterIcon"></div>
                             </div>
                             <div class="add">
-                                <a href="{{ route('cart') }}">Добавить в корзину</a>
-                                <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
+                                @if ($product->status > 0)
+                                    <a href="{{ route('cart') }}">Добавить в корзину</a>
+                                    <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
+                @endforeach
+        </div>
+        <div class="category">
+            <h1 class="catalogHeader">АКВАРИУМЫ</h1>
+            @foreach ($products as $product)
+
+                @if ($product->type == "fish-tank")
+                    <div class="card">
+                        <div><img src="images/products/{{ $product->shortName }}.png" alt="{{ $product->shortName }}" width="200" class="product"></div>
+                        <div class="secondBlock">
+                            <h2 class="cardName">{{ $product->full_name }}</h2>
+                            <div class="information">
+                                <p>Максимальный объем аквариума: {{ $product->max_value }} Л.</p>
+                                @if ($product->status > 0)
+                                    <p>В наличие: {{ $product->status }} Шт.</p>
+                                @else
+                                    <p>Нет в наличие</p>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="thirdBlock">
+                            @foreach ($brands as $brand)
+                                @if ($brand->id == $product->brand)
+                                    <div><img src="images/brands/{{ $brand->name }}.svg" alt="" class="brand"></div>
+                                @endif
+                            @endforeach
+                            <div class="price">{{ $product->price }} Руб</div>
+                            <div class="add">
+                                <a href="{{ route('constructor') }}">Добавить в конструктор</a>
+                                <div><img src="images/check.svg" alt="" class="filterIcon"></div>
+                            </div>
+                            <div class="add">
+                                @if ($product->status > 0)
+                                    <a href="{{ route('cart') }}">Добавить в корзину</a>
+                                    <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -148,6 +169,11 @@
                             <h2 class="cardName">{{ $product->full_name }}</h2>
                             <div class="information">
                                 <p>Максимальный объем аквариума: {{ $product->max_value }} Л.</p>
+                                @if ($product->status > 0)
+                                    <p>В наличие: {{ $product->status }} Шт.</p>
+                                @else
+                                    <p>Нет в наличие</p>
+                                @endif
                             </div>
                         </div>
                         <div class="thirdBlock">
@@ -162,8 +188,10 @@
                                 <div><img src="images/check.svg" alt="" class="filterIcon"></div>
                             </div>
                             <div class="add">
-                                <a href="{{ route('cart') }}">Добавить в корзину</a>
-                                <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
+                                @if ($product->status > 0)
+                                    <a href="{{ route('cart') }}">Добавить в корзину</a>
+                                    <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -182,6 +210,11 @@
                             <h2 class="cardName">{{ $product->full_name }}</h2>
                             <div class="information">
                                 <p>Максимальный объем аквариума: {{ $product->max_value }} Л.</p>
+                                @if ($product->status > 0)
+                                    <p>В наличие: {{ $product->status }} Шт.</p>
+                                @else
+                                    <p>Нет в наличие</p>
+                                @endif
                             </div>
                         </div>
                         <div class="thirdBlock">
@@ -196,8 +229,10 @@
                                 <div><img src="images/check.svg" alt="" class="filterIcon"></div>
                             </div>
                             <div class="add">
-                                <a href="{{ route('cart') }}">Добавить в корзину</a>
-                                <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
+                                @if ($product->status > 0)
+                                    <a href="{{ route('cart') }}">Добавить в корзину</a>
+                                    <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -216,6 +251,11 @@
                             <h2 class="cardName">{{ $product->full_name }}</h2>
                             <div class="information">
                                 <p>Максимальный объем аквариума: {{ $product->max_value }} Л.</p>
+                                @if ($product->status > 0)
+                                    <p>В наличие: {{ $product->status }} Шт.</p>
+                                @else
+                                    <p>Нет в наличие</p>
+                                @endif
                             </div>
                         </div>
                         <div class="thirdBlock">
@@ -230,8 +270,51 @@
                                 <div><img src="images/check.svg" alt="" class="filterIcon"></div>
                             </div>
                             <div class="add">
-                                <a href="{{ route('cart') }}">Добавить в корзину</a>
-                                <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
+                                @if ($product->status > 0)
+                                    <a href="{{ route('cart') }}">Добавить в корзину</a>
+                                    <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
+            @endforeach
+        </div>
+        <div class="category">
+            <h1 class="catalogHeader">ДЕКОРАТИВНОЕ ДЕРЕВО</h1>
+            @foreach ($products as $product)
+
+                @if ($product->type == "wood")
+                    <div class="card">
+                        <div><img src="images/products/{{ $product->shortName }}.png" alt="{{ $product->shortName }}" width="200" class="product"></div>
+                        <div class="secondBlock">
+                            <h2 class="cardName">{{ $product->full_name }}</h2>
+                            <div class="information">
+                                <p>Максимальный объем аквариума: {{ $product->max_value }} Л.</p>
+                                @if ($product->status > 0)
+                                    <p>В наличие: {{ $product->status }} Шт.</p>
+                                @else
+                                    <p>Нет в наличие</p>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="thirdBlock">
+                            @foreach ($brands as $brand)
+                                @if ($brand->id == $product->brand)
+                                    <div><img src="images/brands/{{ $brand->name }}.svg" alt="" class="brand"></div>
+                                @endif
+                            @endforeach
+                            <div class="price">{{ $product->price }} Руб</div>
+                            <div class="add">
+                                <a href="{{ route('constructor') }}">Добавить в конструктор</a>
+                                <div><img src="images/check.svg" alt="" class="filterIcon"></div>
+                            </div>
+                            <div class="add">
+                                @if ($product->status > 0)
+                                    <a href="{{ route('cart') }}">Добавить в корзину</a>
+                                    <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
+                                @endif
                             </div>
                         </div>
                     </div>

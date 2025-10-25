@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\File;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Product;
@@ -36,8 +37,8 @@ class CatalogController extends Controller
             'type' => 'required',
 
             'brand' => 'required',
-            'status' => 'required',
-            'photo' => 'required|file|size:2000|mimes:png',
+            'status' => '',
+            'photo' => 'required|mimes:png',
             'max_value' => 'required',
 
         ]);
@@ -103,8 +104,21 @@ class CatalogController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $product = Product::where('id', $id)->firstorfail();
+        $filename = 'images/products/'.$product->shortName.'.png';
+        $product->delete();
+        File::delete($filename);
+        echo ("Товар удален");
+        return redirect()->route('catalog-admin');
+    }
+
+    public function admin()
+    {
+        return view('catalog-admin', [
+            'products' => Product::all(),
+            'brands' => Brand::all()
+        ]);
     }
 }

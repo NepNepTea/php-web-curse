@@ -20,14 +20,13 @@
         <input type="number" id="price" name="price" class="inputLine" required>
 
         <label for="max_value">Максимальный объем аквариума:</label>
-        <input type="number" id="price" name="max_value" class="inputLine" required>
+        <input type="number" id="max_value" name="max_value" class="inputLine" required>
 
         <label for="type-select">Тип продукта:</label>
         <select name="type" id="type-select">
             <option value="filter">Фильтр</option>
             <option value="light">Освещение</option>
             <option value="fish-tank">Аквариум</option>
-            <option value="light">Освещение</option>
             <option value="wood">Дерево</option>
             <option value="stones">Камни</option>
             <option value="Hideout">Укрытие</option>
@@ -41,11 +40,8 @@
             @endforeach
         </select>
 
-        <label for="status-select">Статус:</label>
-        <select name="status" id="status-select">
-            <option value="В наличие">В наличие</option>
-            <option value="Отсутствует">Отсутствует</option>
-        </select>
+        <label for="status">Количество:</label>
+        <input type="number" id="status" name="status" class="inputLine">
 
         <label for="photo">Фото:</label>
         <input type="file" id="photo" name="photo">
