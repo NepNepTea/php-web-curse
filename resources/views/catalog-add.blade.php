@@ -7,7 +7,7 @@
 @section('content')
     <link rel="stylesheet" href="css/styleLogin.css">
 
-    <form method="POST" action="{{route('catalog-add')}}" enctype="multipart/form-data">
+    <form method="POST" action="{{route('catalog-add')}}">
         @csrf
         <h1>Добавить товар</h1>
         <label for="full_name">Название:</label>

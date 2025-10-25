@@ -98,7 +98,23 @@ class CatalogController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+
+            'full_name' => 'required',
+
+            'shortName' => 'required',
+
+            'price' => 'required',
+
+            'type' => 'required',
+
+            'brand' => 'required',
+            'status' => '',
+            'max_value' => 'required',
+
+        ]);
+        $product = Product::where('id', $id)->firstorfail();
+
     }
 
     /**

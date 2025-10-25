@@ -97,13 +97,12 @@ Route::get('/catalog-admin', [CatalogController::class, 'admin'])
     ->middleware(IsAdmin::class)
     ->middleware('auth');
 
-/*
-Route::delete('/catalog-admin/{id}', 'CatalogController@destroy')
+Route::delete('/catalog-admin/{id}', [CatalogController::class, 'destroy'])
     ->name('delete-product')
     ->middleware(IsAdmin::class)
     ->middleware('auth');
-*/
-Route::delete('/catalog-admin/{id}', [CatalogController::class, 'destroy'])
-    ->name('delete-product')
+
+Route::delete('/catalog-admin/{id}', [CatalogController::class, 'update'])
+    ->name('update-product')
     ->middleware(IsAdmin::class)
     ->middleware('auth');
