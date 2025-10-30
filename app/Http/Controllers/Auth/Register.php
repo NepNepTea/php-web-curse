@@ -34,7 +34,7 @@ class Register extends Controller
 
             'email' => 'required|string|email|max:255|unique:users',
 
-            'password' => 'required|string|confirmed|min:8|regex:[а-zA-Z0-9_]',
+            'password' => 'required|string|confirmed|min:8|regex:[а-zA-Z0-9]',
 
         ]);
 
