@@ -114,6 +114,21 @@ class CatalogController extends Controller
 
         ]);
         $product = Product::where('id', $id)->firstorfail();
+        $oldName = 'images/products/'.$product->shortName.'.png';
+        $product->update([
+            'full_name' => $validated['full_name'],
+
+            'shortName' => $validated['shortName'],
+            'price' => $validated['price'],
+            'type' => $validated['type'],
+            'brand' => $validated['brand'],
+            'status' => $validated['status'],
+            'max_value' => $validated['max_value'],
+        ]);
+        $product->save();
+        $newName = 'images/products/'.$validated['shortName'].'.png';
+        File::move($oldName, $newName);
+        return redirect('/catalog-admin')->with('success', 'Товар изменен');
 
     }
 

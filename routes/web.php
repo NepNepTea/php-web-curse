@@ -102,7 +102,7 @@ Route::delete('/catalog-admin/{id}', [CatalogController::class, 'destroy'])
     ->middleware(IsAdmin::class)
     ->middleware('auth');
 
-Route::delete('/catalog-admin/{id}', [CatalogController::class, 'update'])
+Route::post('/catalog-admin/{id}', [CatalogController::class, 'update'])
     ->name('update-product')
     ->middleware(IsAdmin::class)
     ->middleware('auth');
