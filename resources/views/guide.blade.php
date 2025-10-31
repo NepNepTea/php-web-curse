@@ -1,12 +1,11 @@
 @extends('template')
 
-@section('title')
+@section('head')
     <title>Инструкция по запуску</title>
+    <link rel="stylesheet" href="css/styleGuide.css">
 @endsection
 
 @section('content')
-    <link rel="stylesheet" href="css/styleGuide.css">
-
     <h1>Запуск первого аквариума</h1>
     <div class="steps">
         <div class="oneStep">

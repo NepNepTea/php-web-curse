@@ -1,12 +1,11 @@
 @extends('template')
 
-@section('title')
+@section('head')
     <title>Выход</title>
+    <link rel="stylesheet" href="css/styleConfirm.css">
 @endsection
 
 @section('content')
-  <link rel="stylesheet" href="css/styleConfirm.css">
-
     <div class="confirm">
         <p>Вы уверены что хотите выйти?</p>
         <form method="POST" action="{{ route('logout') }}">

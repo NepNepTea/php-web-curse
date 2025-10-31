@@ -1,11 +1,11 @@
 @extends('template')
 
-@section('title')
+@section('head')
     <title>Профиль</title>
+    <link rel="stylesheet" href="css/styleProfile.css">
 @endsection
 
 @section('content')
-<link rel="stylesheet" href="css/styleProfile.css">
     <div class="container1">
         <div class="userInfo">
             <p>имяПользователя</p>

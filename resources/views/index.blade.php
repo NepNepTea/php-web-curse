@@ -1,11 +1,11 @@
 @extends('template')
 
-@section('title')
+@section('head')
     <title>River Planet</title>
+    <link rel="stylesheet" href="css/styleIndex.css">
 @endsection
 
 @section('content')
-<link rel="stylesheet" href="css/styleIndex.css">
     <section class="main1">
         <a href="{{ route('sales') }}" class="saleButton">
             <div><img src="images/sale.svg" alt="" class="saleIcon"></div>

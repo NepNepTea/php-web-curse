@@ -1,11 +1,11 @@
 @extends('template')
 
-@section('title')
+@section('head')
     <title>Новый бренд</title>
+    <link rel="stylesheet" href="css/styleLogin.css">
 @endsection
 
 @section('content')
-    <link rel="stylesheet" href="css/styleLogin.css">
 
     <form method="POST" action="/brand-add">
         @csrf

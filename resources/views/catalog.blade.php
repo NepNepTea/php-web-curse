@@ -1,12 +1,11 @@
 @extends('template')
 
-@section('title')
+@section('head')
     <title>Каталог</title>
+    <link rel="stylesheet" href="css/styleTech.css">
 @endsection
 
 @section('content')
-    <link rel="stylesheet" href="css/styleTech.css">
-
     <div class="filter">
         <div class="sort">
             <p>Бренд:</p>

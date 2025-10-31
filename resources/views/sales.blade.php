@@ -1,12 +1,11 @@
 @extends('template')
 
-@section('title')
+@section('head')
     <title>Акции</title>
+    <link rel="stylesheet" href="css/styleSale.css">
 @endsection
 
 @section('content')
-    <link rel="stylesheet" href="css/styleSale.css">
-
     <div class="salesBlock">
         <h1 class="saleHeader">действующие акции</h1>
         <div><img src="images/sale.png" class="oneSale"></div>

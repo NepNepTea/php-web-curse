@@ -1,12 +1,11 @@
 @extends('template')
 
-@section('title')
+@section('head')
     <title>Удалить профиль</title>
+    <link rel="stylesheet" href="css/styleConfirm.css">
 @endsection
 
 @section('content')
-  <link rel="stylesheet" href="css/styleConfirm.css">
-
     <div class="confirm">
         <p>Вы уверены что хотите удалить профиль?</p>
         <div class="buttons">

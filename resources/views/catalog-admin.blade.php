@@ -1,12 +1,11 @@
 @extends('template')
 
-@section('title')
+@section('head')
     <title>Каталог админ</title>
+    <link rel="stylesheet" href="css/styleTech.css">
 @endsection
 
 @section('content')
-    <link rel="stylesheet" href="css/styleTech.css">
-
     <div class="filter">
         <div class="sort">
             <p>Бренд:</p>
@@ -30,7 +29,7 @@
                         <div class="secondBlock">
                             <div class="information">
                                 <form method="POST" action="{{route('update-product', $product->id)}}">
-                                    @csrf 
+                                    @csrf
                                     <label for="full_name">Название:</label>
                                     <input value="{{ $product->full_name }}" type="text" id="full_name" name="full_name" class="inputLine" required>
                                     <br>
@@ -91,7 +90,7 @@
                         <div class="secondBlock">
                             <div class="information">
                                 <form method="POST" action="{{route('update-product', $product->id)}}">
-                                    @csrf 
+                                    @csrf
                                     <label for="full_name">Название:</label>
                                     <input value="{{ $product->full_name }}" type="text" id="full_name" name="full_name" class="inputLine" required>
                                     <br>
@@ -152,7 +151,7 @@
                         <div class="secondBlock">
                             <div class="information">
                                 <form method="POST" action="{{route('update-product', $product->id)}}">
-                                    @csrf 
+                                    @csrf
                                     <label for="full_name">Название:</label>
                                     <input value="{{ $product->full_name }}" type="text" id="full_name" name="full_name" class="inputLine" required>
                                     <br>
@@ -213,7 +212,7 @@
                         <div class="secondBlock">
                             <div class="information">
                                 <form method="POST" action="{{route('update-product', $product->id)}}">
-                                    @csrf 
+                                    @csrf
                                     <label for="full_name">Название:</label>
                                     <input value="{{ $product->full_name }}" type="text" id="full_name" name="full_name" class="inputLine" required>
                                     <br>
@@ -274,7 +273,7 @@
                         <div class="secondBlock">
                             <div class="information">
                                 <form method="POST" action="{{route('update-product', $product->id)}}">
-                                    @csrf 
+                                    @csrf
                                     <label for="full_name">Название:</label>
                                     <input value="{{ $product->full_name }}" type="text" id="full_name" name="full_name" class="inputLine" required>
                                     <br>
@@ -335,7 +334,7 @@
                         <div class="secondBlock">
                             <div class="information">
                                 <form method="POST" action="{{route('update-product', $product->id)}}">
-                                    @csrf 
+                                    @csrf
                                     <label for="full_name">Название:</label>
                                     <input value="{{ $product->full_name }}" type="text" id="full_name" name="full_name" class="inputLine" required>
                                     <br>
@@ -396,7 +395,7 @@
                         <div class="secondBlock">
                             <div class="information">
                                 <form method="POST" action="{{route('update-product', $product->id)}}">
-                                    @csrf 
+                                    @csrf
                                     <label for="full_name">Название:</label>
                                     <input value="{{ $product->full_name }}" type="text" id="full_name" name="full_name" class="inputLine" required>
                                     <br>

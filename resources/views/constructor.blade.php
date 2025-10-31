@@ -1,12 +1,11 @@
 @extends('template')
 
-@section('title')
+@section('head')
     <title>Конструктор аквариума</title>
+    <link rel="stylesheet" href="css/styleConstructor.css">
 @endsection
 
 @section('content')
-    <link rel="stylesheet" href="css/styleConstructor.css">
-
     <section class="constructor">
         <div>
             <h1 class="constHeader">ОБЯЗАТЕЛЬНЫЕ КОМПОНЕНТЫ</h1>

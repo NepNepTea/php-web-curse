@@ -1,12 +1,11 @@
 @extends('template')
 
-@section('title')
+@section('head')
     <title>Регистрация</title>
+    <link rel="stylesheet" href="css/styleLogin.css">
 @endsection
 
 @section('content')
-  <link rel="stylesheet" href="css/styleLogin.css">
-
   <form method="POST" action="{{route('register')}}">
       @csrf
       <h1>Регистрация</h1>

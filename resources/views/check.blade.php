@@ -1,12 +1,11 @@
 @extends('template')
 
-@section('title')
+@section('head')
     <title>Оформление заказа</title>
+    <link rel="stylesheet" href="css/styleCheck.css">
 @endsection
 
 @section('content')
-    <link rel="stylesheet" href="css/styleCheck.css">
-
     <form action="">
         <label for="phone">Телефон</label>
         <input type="tel" id="phone" name="phone" class="inputLine">

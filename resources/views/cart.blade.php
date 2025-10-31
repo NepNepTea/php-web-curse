@@ -1,12 +1,11 @@
 @extends('template')
 
-@section('title')
+@section('head')
     <title>Корзина</title>
+    <link rel="stylesheet" href="css/styleCart.css">
 @endsection
 
 @section('content')
-    <link rel="stylesheet" href="css/styleCart.css">
-
     <div class="cartContent">
         <div class="card">
             <div>

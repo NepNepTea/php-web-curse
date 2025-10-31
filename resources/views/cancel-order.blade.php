@@ -1,12 +1,11 @@
 @extends('template')
 
-@section('title')
+@section('head')
     <title>Отменить заказ</title>
+    <link rel="stylesheet" href="css/styleConfirm.css">
 @endsection
 
 @section('content')
-  <link rel="stylesheet" href="css/styleConfirm.css">
-
     <div class="confirm">
         <p>Вы уверены что хотите отменить заказ № 666666666?</p>
         <div class="buttons">

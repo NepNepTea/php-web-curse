@@ -1,12 +1,11 @@
 @extends('template')
 
-@section('title')
+@section('head')
     <title>Новый продукт</title>
+    <link rel="stylesheet" href="css/styleLogin.css">
 @endsection
 
 @section('content')
-    <link rel="stylesheet" href="css/styleLogin.css">
-
     <form method="POST" action="{{route('catalog-add')}}">
         @csrf
         <h1>Добавить товар</h1>
