@@ -113,3 +113,13 @@ Route::post('/brand-add', [BrandController::class, 'create'])->name('brand-add')
     ->name('brand-add')
     ->middleware(IsAdmin::class)
     ->middleware('auth');
+
+Route::get('/brand-admin', [BrandController::class, 'admin'])
+    ->name('brand-admin')
+    ->middleware(IsAdmin::class)
+    ->middleware('auth');
+
+Route::delete('/brand-admin/{id}', [BrandController::class, 'destroy'])
+    ->name('delete-brand')
+    ->middleware(IsAdmin::class)
+    ->middleware('auth');

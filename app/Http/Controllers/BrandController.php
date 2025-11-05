@@ -81,8 +81,19 @@ class BrandController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $brand = Brand::where('id', $id)->firstorfail();
+        $filename = 'images/brands/'.$brand->name.'.svg';
+        $brand->delete();
+        File::delete($filename);
+        echo ("Бренд удален");
+        return redirect()->route('brand-admin');
+    }
+    public function admin()
+    {
+        return view('brand-admin', [
+            'brands' => Brand::all()
+        ]);
     }
 }
