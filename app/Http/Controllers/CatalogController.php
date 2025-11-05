@@ -45,7 +45,6 @@ class CatalogController extends Controller
 
 
 
-        // Create the user
 
         $product = Product::create([
 

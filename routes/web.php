@@ -88,10 +88,6 @@ Route::post('/catalog-add', [CatalogController::class, 'create'])->name('catalog
     ->middleware(IsAdmin::class)
     ->middleware('auth');
 
-Route::view('/brand-add', 'brand-add')
-    ->middleware(IsAdmin::class)
-    ->name('brand-add');
-
 Route::get('/catalog-admin', [CatalogController::class, 'admin'])
     ->name('catalog-admin')
     ->middleware(IsAdmin::class)
@@ -104,5 +100,16 @@ Route::delete('/catalog-admin/{id}', [CatalogController::class, 'destroy'])
 
 Route::post('/catalog-admin/{id}', [CatalogController::class, 'update'])
     ->name('update-product')
+    ->middleware(IsAdmin::class)
+    ->middleware('auth');
+
+Route::view('/brand-add', 'brand-add')
+
+    ->name('brand-add')
+    ->middleware(IsAdmin::class)
+    ->middleware('auth');
+
+Route::post('/brand-add', [BrandController::class, 'create'])->name('brand-add')
+    ->name('brand-add')
     ->middleware(IsAdmin::class)
     ->middleware('auth');
