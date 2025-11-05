@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="css/styleLogin.css">
 
     <form method="POST" action="{{route('catalog-add')}}" enctype="multipart/form-data">
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         @csrf
         <h1>Добавить товар</h1>
