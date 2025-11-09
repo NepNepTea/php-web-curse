@@ -17,6 +17,7 @@
             </select>
         </div>
     </div>
+    <a href="{{ route('catalog-add') }}">добавить товар</a>
     <div class="catalog">
         <div class="category">
             <h1 class="catalogHeader">ВНУТРЕННИЕ ФИЛЬТРЫ</h1>

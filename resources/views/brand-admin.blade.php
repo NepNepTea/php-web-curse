@@ -1,12 +1,13 @@
 @extends('template')
 
-@section('title')
+@section('head')
     <title>Бренды админ</title>
+    <link rel="stylesheet" href="css/styleTech.css">
 @endsection
 
 @section('content')
-    <link rel="stylesheet" href="css/styleTech.css">
-
+    
+    <a href="{{ route('brand-add') }}">добавить бренд</a>
     <div class="catalog">
         <div class="category">
             <h1 class="catalogHeader">БРЕНДЫ</h1>
