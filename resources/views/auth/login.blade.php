@@ -27,5 +27,6 @@
         <label for="remember">Запомнить меня</label><input type="checkbox" name="remember">
     </div>
     <input type="submit" value="Войти" class="btn">
+    <a href="{{ route('register') }}">Создать аккаунт</a>
   </form>
 @endsection

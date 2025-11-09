@@ -33,5 +33,6 @@
       <label for="password_confirmation">Повторите пароль:</label>
       <input type="password" id="password_confirmation" name="password_confirmation" class="inputLine" required>
       <input type="submit" value="Создать профиль" class="btn">
+      <a href="{{ route('login') }}">Уже есть аккаунт</a>
   </form>
 @endsection
