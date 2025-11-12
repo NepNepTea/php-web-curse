@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\Register;
 use App\Http\Controllers\Auth\Login;
 use App\Http\Controllers\Auth\Logout;
 use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\ConstructorController;
 use App\Http\Controllers\BrandController;
 use App\Models\Brand;
 use App\Http\Middleware\IsAdmin;
@@ -24,10 +25,6 @@ Route::get('/sales', function () {
 Route::get('/guide', function () {
     return view('guide');
 })->name('guide');
-
-Route::get('/constructor', function () {
-    return view('constructor');
-})->name('constructor');
 
 Route::get('/cancel-order', function () {
     return view('cancel-order');
@@ -122,4 +119,7 @@ Route::get('/brand-admin', [BrandController::class, 'admin'])
 Route::delete('/brand-admin/{id}', [BrandController::class, 'destroy'])
     ->name('delete-brand')
     ->middleware(IsAdmin::class)
+    ->middleware('auth');
+
+Route::get('/constructor', [ConstructorController::class, 'index'])->name('constructor')
     ->middleware('auth');
