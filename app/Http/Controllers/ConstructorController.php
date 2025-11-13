@@ -30,4 +30,41 @@ class ConstructorController extends Controller
             'filter' => $filter,
         ]);
     }
+
+    public function add($id)
+    {
+        $constructor = Constructor::where('user', auth()->user()->id)->first();
+        $product = Product::where('id', $id)->first();
+        switch ($product->type) {
+            case "filter":
+                $constructor->filter = $id;
+                $constructor->save();
+                break;
+            case "light":
+                $constructor->light = $id;
+                $constructor->save();
+                break;
+            case "fishTank":
+                $constructor->fishTank = $id;
+                $constructor->save();
+                break;
+            case "wood":
+                $constructor->wood = $id;
+                $constructor->save();
+                break;
+            case "stones":
+                $constructor->stones = $id;
+                $constructor->save();
+                break;
+            case "hideout":
+                $constructor->hideout = $id;
+                $constructor->save();
+                break;
+            case "soil":
+                $constructor->soil = $id;
+                $constructor->save();
+                break;
+        }
+        return redirect('/constructor');
+    }
 }

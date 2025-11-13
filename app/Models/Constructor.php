@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Constructor extends Model
 {
+    public $timestamps = false;
     protected $fillable = [
         'light',
         'fishTank',

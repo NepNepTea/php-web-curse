@@ -60,7 +60,10 @@
                                     @endforeach
                                     <div class="price">{{ $product->price }} Руб</div>
                                     <div class="add">
-                                        <a href="{{ route('constructor') }}">Добавить в конструктор</a>
+                                        <form method="POST" action="{{route('constructor-add', $product->id)}}">
+                                            @csrf
+                                            <input type="submit" value="Добавить в конструктор">
+                                        </form>
                                         <div><img src="images/check.svg" alt="" class="filterIcon"></div>
                                     </div>
                                     <div class="add">

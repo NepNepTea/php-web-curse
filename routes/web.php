@@ -123,3 +123,7 @@ Route::delete('/brand-admin/{id}', [BrandController::class, 'destroy'])
 
 Route::get('/constructor', [ConstructorController::class, 'index'])->name('constructor')
     ->middleware('auth');
+
+Route::post('/constructor/{id}', [ConstructorController::class, 'add'])
+    ->name('constructor-add')
+    ->middleware('auth');
