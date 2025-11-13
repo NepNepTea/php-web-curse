@@ -126,13 +126,13 @@
             <h1 class="catalogHeader">АКВАРИУМЫ</h1>
             @foreach ($products as $product)
 
-                @if ($product->type == "fish-tank")
+                @if ($product->type == "fishTank")
                     <div class="card">
                         <div><img src="images/products/{{ $product->shortName }}.png" alt="{{ $product->shortName }}" width="200" class="product"></div>
                         <div class="secondBlock">
                             <h2 class="cardName">{{ $product->full_name }}</h2>
                             <div class="information">
-                                <p>Максимальный объем аквариума: {{ $product->max_value }} Л.</p>
+                                <p>Объем аквариума: {{ $product->max_value }} Л.</p>
                                 @if ($product->status > 0)
                                     <p>В наличие: {{ $product->status }} Шт.</p>
                                 @else
