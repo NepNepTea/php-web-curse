@@ -174,14 +174,18 @@
             </div>
         </div>
     </section>
-    <section class="warnings">
-        @if(!empty($filter))
-            @if($filter->max_value < $fishTank->max_value)
-                <div class="oneError"><img src="images/errorcros.svg" alt="" class="errorIcon"><p>Фильтр не совместим с выбранным аквариумом, необходим фильтр большей мощности</p></div>
+    @if(!empty($filter) or !empty($light))
+        <section class="warnings">
+            @if(!empty($filter))
+                @if($filter->max_value < $fishTank->max_value)
+                    <div class="oneError"><img src="images/errorcros.svg" alt="" class="errorIcon"><p>Фильтр не совместим с выбранным аквариумом, необходим фильтр большей мощности</p></div>
+                @endif
             @endif
-        @endif
-        @if($light->max_value < $fishTank->max_value)
-            <div class="oneError"><img src="images/errorcros.svg" alt="" class="errorIcon"><p>Яркости выбранной лампы не достаточно для данного обьема аквариума</p></div>
-        @endif
-    </section>
+            @if(!empty($light))
+                @if($light->max_value < $fishTank->max_value)
+                    <div class="oneError"><img src="images/errorcros.svg" alt="" class="errorIcon"><p>Яркости выбранной лампы не достаточно для данного обьема аквариума</p></div>
+                @endif
+            @endif
+        </section>
+    @endif
 @endsection
