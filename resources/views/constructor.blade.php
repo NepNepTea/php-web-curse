@@ -166,7 +166,7 @@
                 <div class="costBlock">
                     <div class="finalCost">
                         <p>ЦЕНА</p>
-                        <div class="finalNumbers">0 Руб</div>
+                        <div class="finalNumbers">{{ $cost }} Руб</div>
                     </div>
                     <div><a href="{{ route('cart') }}">КУПИТЬ</a></div>
                 </div>
@@ -174,7 +174,7 @@
             </div>
         </div>
     </section>
-    @if(!empty($filter) or !empty($light))
+    @if((!empty($filter) or !empty($light)) and !empty($fishTank) and ($filter->max_value < $fishTank->max_value or $light->max_value < $fishTank->max_value))
         <section class="warnings">
             @if(!empty($filter))
                 @if($filter->max_value < $fishTank->max_value)

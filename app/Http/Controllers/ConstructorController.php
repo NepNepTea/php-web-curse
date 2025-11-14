@@ -18,6 +18,28 @@ class ConstructorController extends Controller
         $hideout = Product::where('id', $constructor->hideout)->first();
         $soil = Product::where('id', $constructor->soil)->first();
         $filter = Product::where('id', $constructor->filter)->first();
+        $cost = 0;
+        if(!empty($filter->price)) {
+            $cost += $filter->price;
+        };
+        if(!empty($light->price)) {
+            $cost += $light->price;
+        };
+        if(!empty($fishTank->price)) {
+            $cost += $fishTank->price;
+        };
+        if(!empty($wood->price)) {
+            $cost += $wood->price;
+        };
+        if(!empty($stones->price)) {
+            $cost += $stones->price;
+        };
+        if(!empty($hideout->price)) {
+            $cost += $hideout->price;
+        };
+        if(!empty($soil->price)) {
+            $cost += $soil->price;
+        };
         return view('constructor', [
             'products' => Product::all(),
             'constructor' => $constructor,
@@ -28,6 +50,7 @@ class ConstructorController extends Controller
             'hideout' => $hideout,
             'soil' => $soil,
             'filter' => $filter,
+            'cost' => $cost,
         ]);
     }
 
