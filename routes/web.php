@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\Login;
 use App\Http\Controllers\Auth\Logout;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\ConstructorController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\BrandController;
 use App\Models\Brand;
 use App\Http\Middleware\IsAdmin;
@@ -29,10 +30,6 @@ Route::get('/guide', function () {
 Route::get('/cancel-order', function () {
     return view('cancel-order');
 })->name('cancel-order');
-
-Route::get('/cart', function () {
-    return view('cart');
-})->name('cart');
 
 Route::get('/check', function () {
     return view('check');
@@ -126,4 +123,11 @@ Route::get('/constructor', [ConstructorController::class, 'index'])->name('const
 
 Route::post('/constructor/{id}', [ConstructorController::class, 'add'])
     ->name('constructor-add')
+    ->middleware('auth');
+
+Route::post('/cart/{id}', [CartController::class, 'add'])
+    ->name('cart-add')
+    ->middleware('auth');
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart')
     ->middleware('auth');

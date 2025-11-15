@@ -18,27 +18,59 @@ class ConstructorController extends Controller
         $hideout = Product::where('id', $constructor->hideout)->first();
         $soil = Product::where('id', $constructor->soil)->first();
         $filter = Product::where('id', $constructor->filter)->first();
+        $constructorContent = '';
         $cost = 0;
         if(!empty($filter->price)) {
             $cost += $filter->price;
+            $constructorContent .= $filter->id;
         };
         if(!empty($light->price)) {
             $cost += $light->price;
+            if($constructorContent == ''){
+                $constructorContent .= $light->id;
+            } else {
+                $constructorContent .= ',' . $light->id;
+            }
         };
         if(!empty($fishTank->price)) {
             $cost += $fishTank->price;
+            if($constructorContent == ''){
+                $constructorContent .= $fishTank->id;
+            } else {
+                $constructorContent .= ',' . $fishTank->id;
+            }
         };
         if(!empty($wood->price)) {
             $cost += $wood->price;
+            if($constructorContent == ''){
+                $constructorContent .= $wood->id;
+            } else {
+                $constructorContent .= ',' . $wood->id;
+            }
         };
         if(!empty($stones->price)) {
             $cost += $stones->price;
+            if($constructorContent == ''){
+                $constructorContent .= $stones->id;
+            } else {
+                $constructorContent .= ',' . $stones->id;
+            }
         };
         if(!empty($hideout->price)) {
             $cost += $hideout->price;
+            if($constructorContent == ''){
+                $constructorContent .= $hideout->id;
+            } else {
+                $constructorContent .= ',' . $hideout->id;
+            }
         };
         if(!empty($soil->price)) {
             $cost += $soil->price;
+            if($constructorContent == ''){
+                $constructorContent .= $soil->id;
+            } else {
+                $constructorContent .= ',' . $soil->id;
+            }
         };
         return view('constructor', [
             'products' => Product::all(),
@@ -51,6 +83,7 @@ class ConstructorController extends Controller
             'soil' => $soil,
             'filter' => $filter,
             'cost' => $cost,
+            'constructorContent' => $constructorContent,
         ]);
     }
 

@@ -68,7 +68,10 @@
                                     </div>
                                     <div class="add">
                                         @if ($product->status > 0)
-                                            <a href="{{ route('cart') }}">Добавить в корзину</a>
+                                            <form method="POST" action="{{route('cart-add', $product->id)}}">
+                                                @csrf
+                                                <input type="submit" value="Добавить в корзину">
+                                            </form>
                                             <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
                                         @endif
                                     </div>
@@ -112,7 +115,10 @@
                             </div>
                             <div class="add">
                                 @if ($product->status > 0)
-                                    <a href="{{ route('cart') }}">Добавить в корзину</a>
+                                    <form method="POST" action="{{route('cart-add', $product->id)}}">
+                                        @csrf
+                                        <input type="submit" value="Добавить в корзину">
+                                    </form>
                                     <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
                                 @endif
                             </div>
@@ -156,7 +162,10 @@
                             </div>
                             <div class="add">
                                 @if ($product->status > 0)
-                                    <a href="{{ route('cart') }}">Добавить в корзину</a>
+                                    <form method="POST" action="{{route('cart-add', $product->id)}}">
+                                        @csrf
+                                        <input type="submit" value="Добавить в корзину">
+                                    </form>
                                     <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
                                 @endif
                             </div>
@@ -200,7 +209,10 @@
                             </div>
                             <div class="add">
                                 @if ($product->status > 0)
-                                    <a href="{{ route('cart') }}">Добавить в корзину</a>
+                                    <form method="POST" action="{{route('cart-add', $product->id)}}">
+                                        @csrf
+                                        <input type="submit" value="Добавить в корзину">
+                                    </form>
                                     <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
                                 @endif
                             </div>
@@ -244,7 +256,10 @@
                             </div>
                             <div class="add">
                                 @if ($product->status > 0)
-                                    <a href="{{ route('cart') }}">Добавить в корзину</a>
+                                    <form method="POST" action="{{route('cart-add', $product->id)}}">
+                                        @csrf
+                                        <input type="submit" value="Добавить в корзину">
+                                    </form>
                                     <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
                                 @endif
                             </div>
@@ -288,7 +303,10 @@
                             </div>
                             <div class="add">
                                 @if ($product->status > 0)
-                                    <a href="{{ route('cart') }}">Добавить в корзину</a>
+                                    <form method="POST" action="{{route('cart-add', $product->id)}}">
+                                        @csrf
+                                        <input type="submit" value="Добавить в корзину">
+                                    </form>
                                     <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
                                 @endif
                             </div>
@@ -332,7 +350,10 @@
                             </div>
                             <div class="add">
                                 @if ($product->status > 0)
-                                    <a href="{{ route('cart') }}">Добавить в корзину</a>
+                                    <form method="POST" action="{{route('cart-add', $product->id)}}">
+                                        @csrf
+                                        <input type="submit" value="Добавить в корзину">
+                                    </form>
                                     <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
                                 @endif
                             </div>

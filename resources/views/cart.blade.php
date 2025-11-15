@@ -38,6 +38,7 @@
         <div class="costBlock">
             <p>Итого:</p>
             <p>3 630 Руб</p>
+            <p>{{ $content }}</p>
         </div>
         <a href="{{ route('check') }}" class="buyBtn">Перейти к оформлению</a>
     </div>

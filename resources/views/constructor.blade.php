@@ -169,6 +169,7 @@
                         <div class="finalNumbers">{{ $cost }} Руб</div>
                     </div>
                     <div><a href="{{ route('cart') }}">КУПИТЬ</a></div>
+                    <p>{{$constructorContent}}</p>
                 </div>
 
             </div>
