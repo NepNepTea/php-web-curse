@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Product;
 
 class CartController extends Controller
 {
@@ -19,9 +20,19 @@ class CartController extends Controller
     }
     public function index()
     {
-        $cart = Cart::where('user', auth()->user()->id)->first();;
+        $cost = 0;
+        $cart = Cart::where('user', auth()->user()->id)->first();
+        if($cart->content != '' or !empty($cart->content)){
+            $cartContent = explode(',', $cart->content);
+        }
+        $contents = Product::whereIn('id', $cartContent)->get();
+        foreach ($contents as $content) {
+            $cost += $content->price;
+
+        }
         return view('cart', [
-            'content' => $cart->content
+            'contents' => $contents,
+            'cost' => $cost
         ]);
     }
 }
