@@ -29,7 +29,6 @@ class CartController extends Controller
             $contents = Product::whereIn('id', $cartContent)->get();
             foreach ($contents as $content) {
                 $cost += $content->price;
-
             }
         }
         if ($cartStatus == 'notempty') {
@@ -44,5 +43,23 @@ class CartController extends Controller
                 'cost' => 0
             ]);
         }
+    }
+    public function delete($id)
+    {
+        $cart = Cart::where('user', auth()->user()->id)->first();
+        $cartContent = explode(',', $cart->content);
+        $newContent = '';
+        foreach ($cartContent as $content) {
+            if ((int)$content != $id) {
+                if ($newContent == '') {
+                    $newContent .= $content;
+                } else {
+                    $newContent .= ',' . $content;
+                }
+            }
+        }
+        $cart->content = $newContent;
+        $cart->save();
+        return redirect()->back();
     }
 }

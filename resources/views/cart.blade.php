@@ -18,7 +18,7 @@
                         <p>В наличие: {{ $content->status }} Шт.</p>
                     </div>
                     <div class="section2">
-                        <a href="#"><img src="images/trash.svg" alt="" class="trashIcon"></a>
+                        <a href="{{ route('cart-delete', $content->id) }}"><img src="images/trash.svg" alt="" class="trashIcon"></a>
                         <p class="price">{{ $content->price }} Руб</p>
                     </div>
                 </div>

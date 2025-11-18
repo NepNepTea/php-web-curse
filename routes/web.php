@@ -51,7 +51,6 @@ Route::post('/register', Register::class)
 
     ->name('register');
 
-// Login routes
 Route::view('/login', 'auth.login')
     ->middleware('guest')
     ->name('login');
@@ -60,7 +59,6 @@ Route::post('/login', Login::class)
     ->middleware('guest')
     ->name('login');
 
-// Logout route
 Route::view('/logout-page', 'logout')
     ->name('logout-page');
 
@@ -130,4 +128,7 @@ Route::post('/cart/{id}', [CartController::class, 'add'])
     ->middleware('auth');
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart')
+    ->middleware('auth');
+
+Route::get('/cart/{id}', [CartController::class, 'delete'])->name('cart-delete')
     ->middleware('auth');
