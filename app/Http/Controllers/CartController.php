@@ -20,19 +20,29 @@ class CartController extends Controller
     }
     public function index()
     {
+        $cartStatus ='empty';
         $cost = 0;
         $cart = Cart::where('user', auth()->user()->id)->first();
-        if($cart->content != '' or !empty($cart->content)){
+        if($cart->content != '' or !empty($cart->content)) {
+            $cartStatus ='notempty';
             $cartContent = explode(',', $cart->content);
-        }
-        $contents = Product::whereIn('id', $cartContent)->get();
-        foreach ($contents as $content) {
-            $cost += $content->price;
+            $contents = Product::whereIn('id', $cartContent)->get();
+            foreach ($contents as $content) {
+                $cost += $content->price;
 
+            }
         }
-        return view('cart', [
-            'contents' => $contents,
-            'cost' => $cost
-        ]);
+        if ($cartStatus == 'notempty') {
+            return view('cart', [
+                'contents' => $contents,
+                'cost' => $cost,
+                'cartStatus' => $cartStatus
+            ]);
+        } else {
+            return view('cart', [
+                'cartStatus' => $cartStatus,
+                'cost' => 0
+            ]);
+        }
     }
 }
