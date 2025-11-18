@@ -7,15 +7,6 @@
 
 @section('content')
     <div class="filter">
-        <div class="sort">
-            <p>Бренд:</p>
-            <select name="brandFilter" id="select">
-                <option value="all">все</option>
-                @foreach ($brands as $brand)
-                    <option value="{{ $brand->id }}">{{ $brand->name }}</option>
-                @endforeach
-            </select>
-        </div>
         <div class="garanty">
             <div class="garantyFlex">
                 <p>О гарантии</p>
@@ -68,10 +59,14 @@
                                     </div>
                                     <div class="add">
                                         @if ($product->status > 0)
-                                            <form method="POST" action="{{route('cart-add', $product->id)}}">
-                                                @csrf
-                                                <input type="submit" value="Добавить в корзину">
-                                            </form>
+                                            @if()
+                                                <form method="POST" action="{{route('cart-add', $product->id)}}">
+                                                    @csrf
+                                                    <input type="submit" value="Добавить в корзину">
+                                                </form>
+                                            @else
+                                                <p>Уже в корзине</p>
+                                            @endif
                                             <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
                                         @endif
                                     </div>
