@@ -59,13 +59,13 @@
                                     </div>
                                     <div class="add">
                                         @if ($product->status > 0)
-                                            @if()
+                                            @if(in_array($product->id, $cartContent))
+                                                <p>Уже в корзине</p>
+                                            @else
                                                 <form method="POST" action="{{route('cart-add', $product->id)}}">
                                                     @csrf
                                                     <input type="submit" value="Добавить в корзину">
                                                 </form>
-                                            @else
-                                                <p>Уже в корзине</p>
                                             @endif
                                             <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
                                         @endif
@@ -110,10 +110,14 @@
                             </div>
                             <div class="add">
                                 @if ($product->status > 0)
-                                    <form method="POST" action="{{route('cart-add', $product->id)}}">
-                                        @csrf
-                                        <input type="submit" value="Добавить в корзину">
-                                    </form>
+                                    @if(in_array($product->id, $cartContent))
+                                        <p>Уже в корзине</p>
+                                    @else
+                                        <form method="POST" action="{{route('cart-add', $product->id)}}">
+                                            @csrf
+                                            <input type="submit" value="Добавить в корзину">
+                                        </form>
+                                    @endif
                                     <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
                                 @endif
                             </div>
@@ -157,10 +161,14 @@
                             </div>
                             <div class="add">
                                 @if ($product->status > 0)
-                                    <form method="POST" action="{{route('cart-add', $product->id)}}">
-                                        @csrf
-                                        <input type="submit" value="Добавить в корзину">
-                                    </form>
+                                    @if(in_array($product->id, $cartContent))
+                                        <p>Уже в корзине</p>
+                                    @else
+                                        <form method="POST" action="{{route('cart-add', $product->id)}}">
+                                            @csrf
+                                            <input type="submit" value="Добавить в корзину">
+                                        </form>
+                                    @endif
                                     <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
                                 @endif
                             </div>
@@ -204,10 +212,14 @@
                             </div>
                             <div class="add">
                                 @if ($product->status > 0)
-                                    <form method="POST" action="{{route('cart-add', $product->id)}}">
-                                        @csrf
-                                        <input type="submit" value="Добавить в корзину">
-                                    </form>
+                                    @if(in_array($product->id, $cartContent))
+                                        <p>Уже в корзине</p>
+                                    @else
+                                        <form method="POST" action="{{route('cart-add', $product->id)}}">
+                                            @csrf
+                                            <input type="submit" value="Добавить в корзину">
+                                        </form>
+                                    @endif
                                     <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
                                 @endif
                             </div>
@@ -251,10 +263,14 @@
                             </div>
                             <div class="add">
                                 @if ($product->status > 0)
-                                    <form method="POST" action="{{route('cart-add', $product->id)}}">
-                                        @csrf
-                                        <input type="submit" value="Добавить в корзину">
-                                    </form>
+                                    @if(in_array($product->id, $cartContent))
+                                        <p>Уже в корзине</p>
+                                    @else
+                                        <form method="POST" action="{{route('cart-add', $product->id)}}">
+                                            @csrf
+                                            <input type="submit" value="Добавить в корзину">
+                                        </form>
+                                    @endif
                                     <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
                                 @endif
                             </div>
@@ -298,10 +314,14 @@
                             </div>
                             <div class="add">
                                 @if ($product->status > 0)
-                                    <form method="POST" action="{{route('cart-add', $product->id)}}">
-                                        @csrf
-                                        <input type="submit" value="Добавить в корзину">
-                                    </form>
+                                    @if(in_array($product->id, $cartContent))
+                                        <p>Уже в корзине</p>
+                                    @else
+                                        <form method="POST" action="{{route('cart-add', $product->id)}}">
+                                            @csrf
+                                            <input type="submit" value="Добавить в корзину">
+                                        </form>
+                                    @endif
                                     <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
                                 @endif
                             </div>
@@ -345,10 +365,14 @@
                             </div>
                             <div class="add">
                                 @if ($product->status > 0)
-                                    <form method="POST" action="{{route('cart-add', $product->id)}}">
-                                        @csrf
-                                        <input type="submit" value="Добавить в корзину">
-                                    </form>
+                                    @if(in_array($product->id, $cartContent))
+                                        <p>Уже в корзине</p>
+                                    @else
+                                        <form method="POST" action="{{route('cart-add', $product->id)}}">
+                                            @csrf
+                                            <input type="submit" value="Добавить в корзину">
+                                        </form>
+                                    @endif
                                     <div><img src="images/cart.svg" alt="" class="filterIcon"></div>
                                 @endif
                             </div>

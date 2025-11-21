@@ -1,20 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
-use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Brand;
+use App\Models\Cart;
 
 class CatalogController extends Controller
 {
     public function index()
     {
+        if (Auth::check()) {
+            $cart = Cart::where('user', auth()->user()->id)->firstorfail();
+            $cartContent = explode(',', $cart->content);
+        }
+        else {
+            $cartContent = [];
+        }
         return view('catalog', [
                     'products' => Product::all(),
-                    'brands' => Brand::all()
+                    'brands' => Brand::all(),
+                    'cartContent' => $cartContent
                 ]);
     }
 
