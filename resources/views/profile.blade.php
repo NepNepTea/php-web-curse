@@ -8,8 +8,8 @@
 @section('content')
     <div class="container1">
         <div class="userInfo">
-            <p>имяПользователя</p>
-            <p>pochta@pochta.ru</p>
+            <p>{{ $user->name }}</p>
+            <p>{{ $user->email }}</p>
         </div>
     </div>
     <h1>Мои заказы</h1>

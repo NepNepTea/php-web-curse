@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\User;
+
+class ProfileController extends Controller
+{
+    public function index()
+    {
+        $user = User::where('id', auth()->user()->id)->first();
+        return view('profile', [
+            'user' => $user
+        ]);
+    }
+}

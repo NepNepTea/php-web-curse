@@ -8,16 +8,13 @@ use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\ConstructorController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ProfileController;
 use App\Models\Brand;
 use App\Http\Middleware\IsAdmin;
 
 Route::get('/', function () {
     return view('index');
 })->name('index');
-
-Route::get('/profile', function () {
-    return view('profile');
-})->name('profile');
 
 Route::get('/sales', function () {
     return view('sales');
@@ -131,4 +128,7 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart')
     ->middleware('auth');
 
 Route::get('/cart/{id}', [CartController::class, 'delete'])->name('cart-delete')
+    ->middleware('auth');
+
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile')
     ->middleware('auth');
