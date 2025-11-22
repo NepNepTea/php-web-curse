@@ -9,6 +9,7 @@ use App\Http\Controllers\ConstructorController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\OrderController;
 use App\Models\Brand;
 use App\Http\Middleware\IsAdmin;
 
@@ -131,4 +132,9 @@ Route::get('/cart/{id}', [CartController::class, 'delete'])->name('cart-delete')
     ->middleware('auth');
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile')
+    ->middleware('auth');
+
+Route::get('/orders-admin', [OrderController::class, 'admin'])
+    ->name('orders-admin')
+    ->middleware(IsAdmin::class)
     ->middleware('auth');

@@ -6,17 +6,6 @@
 @endsection
 
 @section('content')
-    <div class="filter">
-        <div class="sort">
-            <p>Бренд:</p>
-            <select name="brandFilter" id="select">
-                <option value="all">все</option>
-                @foreach ($brands as $brand)
-                    <option value="{{ $brand->id }}">{{ $brand->name }}</option>
-                @endforeach
-            </select>
-        </div>
-    </div>
     <a href="{{ route('catalog-add') }}">добавить товар</a>
     <div class="catalog">
         <div class="category">
