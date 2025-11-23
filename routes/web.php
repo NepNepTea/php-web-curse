@@ -138,3 +138,8 @@ Route::get('/orders-admin', [OrderController::class, 'admin'])
     ->name('orders-admin')
     ->middleware(IsAdmin::class)
     ->middleware('auth');
+
+Route::post('/orders-admin/{id}', [OrderController::class, 'update'])
+    ->name('update-order')
+    ->middleware(IsAdmin::class)
+    ->middleware('auth');

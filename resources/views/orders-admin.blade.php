@@ -22,12 +22,17 @@
                         </div>
                     </div>
                     <div class="thirdBlock">
-                        <label for="status-select">Статус:</label>
-                        <select name="status" id="status-select">
-                            @foreach ($statuses as $status)
-                                <option @if ($order->status == $status) selected @endif value="{{ $status }}">{{ $status }}</option>
-                            @endforeach
-                        </select>
+                        <form method="POST" action="{{route('update-order', $order->id)}}">
+                            @csrf
+                            <label for="status-select">Статус:</label>
+                            <select name="status" id="status-select">
+                                @foreach ($statuses as $status)
+                                    <option @if ($order->status == $status) selected @endif value="{{ $status }}">{{ $status }}</option>
+                                @endforeach
+                            </select>
+                            <br>
+                            <input type="submit" value="Изменить" class="btn">
+                        </form>
                     </div>
                 </div>
             @endforeach

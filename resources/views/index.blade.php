@@ -8,8 +8,8 @@
 @section('content')
 @auth
     @if (auth()->user()->role == "admin")
-        <a href="{{ route('brand-admin') }}">Бренды админ</a>
-        <a href="{{ route('catalog-admin') }}">Товары админ</a>
+        <a href="{{ route('brand-admin') }}">Бренды админ</a><br>
+        <a href="{{ route('catalog-admin') }}">Товары админ</a><br>
         <a href="{{ route('orders-admin') }}">Заказы админ</a>
     @else
         <section class="main1">
