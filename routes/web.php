@@ -29,10 +29,6 @@ Route::get('/cancel-order', function () {
     return view('cancel-order');
 })->name('cancel-order');
 
-Route::get('/check', function () {
-    return view('check');
-})->name('check');
-
 Route::get('/delete-profile', function () {
     return view('delete-profile');
 })->name('delete-profile');
@@ -142,4 +138,12 @@ Route::get('/orders-admin', [OrderController::class, 'admin'])
 Route::post('/orders-admin/{id}', [OrderController::class, 'update'])
     ->name('update-order')
     ->middleware(IsAdmin::class)
+    ->middleware('auth');
+
+Route::get('/check/{products}', function (?string $products = null) {
+    return view('check', [
+        'products' => $products
+    ]);
+})
+    ->name('check')
     ->middleware('auth');

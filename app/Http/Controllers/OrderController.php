@@ -22,4 +22,12 @@ class OrderController extends Controller
             ->update(['status' => $validated['status']]);
         return redirect()->back();
     }
+
+    public function buy(Request $request, string $id)
+    {
+        $validated = $request->validate([
+            'phone' => 'required|regex:/^[0-9]+$/',
+        ]);
+        return redirect('/profile');
+    }
 }
