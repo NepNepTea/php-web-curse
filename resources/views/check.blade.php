@@ -7,7 +7,12 @@
 
 @section('content')
     <form action="">
-        <p>{{ $products }}</p>
+        @foreach ($products as $product)
+            <p>{{ $product->fullName }}</p>
+        @endforeach
+            @foreach ($productsid as $cock)
+                <p>{{ $cock }}</p>
+            @endforeach
         <hr>
         <label for="phone">Телефон</label>
         <input type="tel" id="phone" name="phone" class="inputLine">

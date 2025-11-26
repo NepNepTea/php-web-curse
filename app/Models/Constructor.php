@@ -14,5 +14,6 @@ class Constructor extends Model
         'stones',
         'hideout',
         'soil',
+        'constructorContent',
     ];
 }

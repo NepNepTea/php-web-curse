@@ -34,6 +34,6 @@
             <p>Итого:</p>
             <p>{{ $cost }} Руб</p>
         </div>
-        <a href="{{ route('check') }}" class="buyBtn">Перейти к оформлению</a>
+        <a href="{{ route('checkFromCart') }}" class="buyBtn">Перейти к оформлению</a>
     </div>
 @endsection

@@ -168,8 +168,7 @@
                         <p>ЦЕНА</p>
                         <div class="finalNumbers">{{ $cost }} Руб</div>
                     </div>
-                    <div><a href="{{ route('check', $constructorContent) }}">КУПИТЬ</a></div>
-                    <p>{{$constructorContent}}</p>
+                    <div><a href="{{ route('checkFromConstructor') }}">КУПИТЬ</a></div>
                 </div>
 
             </div>

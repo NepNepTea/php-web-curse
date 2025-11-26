@@ -72,6 +72,8 @@ class ConstructorController extends Controller
                 $constructorContent .= ',' . $soil->id;
             }
         };
+        $constructor->constructorContent = $constructorContent;
+        $constructor->save();
         return view('constructor', [
             'products' => Product::all(),
             'constructor' => $constructor,
@@ -83,7 +85,6 @@ class ConstructorController extends Controller
             'soil' => $soil,
             'filter' => $filter,
             'cost' => $cost,
-            'constructorContent' => $constructorContent,
         ]);
     }
 

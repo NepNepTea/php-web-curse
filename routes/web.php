@@ -140,10 +140,8 @@ Route::post('/orders-admin/{id}', [OrderController::class, 'update'])
     ->middleware(IsAdmin::class)
     ->middleware('auth');
 
-Route::get('/check/{products}', function (?string $products = null) {
-    return view('check', [
-        'products' => $products
-    ]);
-})
-    ->name('check')
+Route::get('/checkcon', [OrderController::class, 'buycon'])->name('checkFromConstructor')
+    ->middleware('auth');
+
+Route::get('/checkcar', [OrderController::class, 'buycar'])->name('checkFromCart')
     ->middleware('auth');
