@@ -6,13 +6,11 @@
 @endsection
 
 @section('content')
-    <form action="">
+    <form method="POST" action="{{ route('order-add', $page) }}">
+        @csrf
         @foreach ($products as $product)
-            <p>{{ $product->fullName }}</p>
+            <p>{{ $product->full_name }} {{ $product->price }} Руб.</p>
         @endforeach
-            @foreach ($productsid as $cock)
-                <p>{{ $cock }}</p>
-            @endforeach
         <hr>
         <label for="phone">Телефон</label>
         <input type="tel" id="phone" name="phone" class="inputLine">

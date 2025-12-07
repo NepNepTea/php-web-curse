@@ -14,5 +14,6 @@ class Cartorder extends Model
         'products',
         'user',
         'date',
+        'phone',
     ];
 }

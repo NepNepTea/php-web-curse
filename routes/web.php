@@ -70,7 +70,6 @@ Route::view('/catalog-add', 'catalog-add', ['brands' => Brand::all()])
     ->middleware('auth');
 
 Route::post('/catalog-add', [CatalogController::class, 'create'])->name('catalog-add')
-    ->name('catalog-add')
     ->middleware(IsAdmin::class)
     ->middleware('auth');
 
@@ -96,7 +95,6 @@ Route::view('/brand-add', 'brand-add')
     ->middleware('auth');
 
 Route::post('/brand-add', [BrandController::class, 'create'])->name('brand-add')
-    ->name('brand-add')
     ->middleware(IsAdmin::class)
     ->middleware('auth');
 
@@ -144,4 +142,8 @@ Route::get('/checkcon', [OrderController::class, 'buycon'])->name('checkFromCons
     ->middleware('auth');
 
 Route::get('/checkcar', [OrderController::class, 'buycar'])->name('checkFromCart')
+    ->middleware('auth');
+
+Route::post('/order-add/{page}', [OrderController::class, 'check'])
+    ->name('order-add')
     ->middleware('auth');

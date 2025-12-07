@@ -1,12 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Constructor;
 class ConstructorController extends Controller
-
 {
     public function index()
     {
@@ -85,9 +82,7 @@ class ConstructorController extends Controller
             'soil' => $soil,
             'filter' => $filter,
             'cost' => $cost,
-        ]);
-    }
-
+        ]);}
     public function add($id)
     {
         $constructor = Constructor::where('user', auth()->user()->id)->first();
@@ -120,8 +115,7 @@ class ConstructorController extends Controller
             case "soil":
                 $constructor->soil = $id;
                 $constructor->save();
-                break;
-        }
+                break;}
         return redirect('/constructor');
     }
 }

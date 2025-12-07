@@ -25,7 +25,4 @@
             </div>
         @endforeach
     </div>
-    <div class="container2">
-        <a href="{{ route('delete-profile') }}" class="delete">удалить профиль</a>
-    </div>
 @endsection
