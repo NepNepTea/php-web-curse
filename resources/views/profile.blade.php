@@ -21,7 +21,6 @@
                     <div class="infoLine"><p>Статус</p><p class="status">{{ $order->status }}</p></div>
                 </div>
                 <div class="infoLine"><p>Сумма</p><p class="cost">{{ $order->cost }} Руб</p></div>
-                <div class="infoLine"><a href="{{ route('cancel-order') }}" class="cancel">отменить заказ</a></div>
             </div>
         @endforeach
     </div>
